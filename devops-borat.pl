@@ -7,7 +7,7 @@
 use LWP::Simple;
 use JSON::XS;
 
-my $json = decode_json (get ('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=devops_borat'));
+my $json = decode_json (get ('https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=devops_borat&count=666'));
 
 my $template = `cat template.svg`;
 
