@@ -20,7 +20,8 @@ foreach $tweet (@$json) {
 
 	my $filled = $template;
 	$filled =~ s/\@IMG\@/profile.jpeg/gm;
-	$filled =~ s/\@USER\@/$tweet->{user}{screen_name}/gm;
+	$filled =~ s/\@USER\@/\@$tweet->{user}{screen_name}/gm;
+	$tweet->{created_at} =~ s/ \+\d{4}// or die;
 	$filled =~ s/\@TIME\@/$tweet->{created_at}/gm;
 
 	my $line = 1;
